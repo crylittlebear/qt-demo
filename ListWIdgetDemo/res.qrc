@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/new.png</file>
+        <file>img/open.png</file>
+        <file>img/exit.png</file>
+        <file>img/add.png</file>
+        <file>img/clean.png</file>
+        <file>img/delete (2).png</file>
+        <file>img/edit.png</file>
+        <file>img/init.png</file>
+        <file>img/all.png</file>
+        <file>img/inverse.png</file>
+        <file>img/none.png</file>
+        <file>img/down.png</file>
+        <file>img/check.png</file>
+    </qresource>
+</RCC>
