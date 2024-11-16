@@ -27,6 +27,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/*
+ * action for tool buttons
+ * add by sadlittlebear
+*/
 void MainWindow::setActionForToolButtons()
 {
     ui->tBtnInit->setDefaultAction(ui->actionInit);
