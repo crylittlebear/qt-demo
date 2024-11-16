@@ -180,13 +180,17 @@ void MainWindow::on_btnShowTable_clicked()
 
 void MainWindow::on_checkBoxEditable_clicked(bool checked)
 {
-
+    if (checked) {
+        ui->tableWidget->setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::SelectedClicked);
+    } else {
+        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    }
 }
 
 
 void MainWindow::on_checkBoxSpaceRowColor_clicked(bool checked)
 {
-
+    ui->tableWidget->setAlternatingRowColors(checked);
 }
 
 
