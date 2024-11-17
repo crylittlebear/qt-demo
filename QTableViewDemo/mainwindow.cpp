@@ -82,7 +82,7 @@ void MainWindow::sltCurrentChanged(const QModelIndex &current, const QModelIndex
 {
     Q_UNUSED(previous);
     if (current.isValid()) {
-        labelCurPos_->setText(QString("当前单元格: %1行, %2列").arg(current.row()).arg(current.column()));
+        labelCurPos_->setText(QString("当前单元格: %1行, %2列").arg(current.row() + 1).arg(current.column() + 1));
         QStandardItem* item = model_->itemFromIndex(current);
         labelCellText_->setText(QString("单元格内容: %1").arg(item->text()));
         QFont font = item->font();
