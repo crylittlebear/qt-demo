@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/add (1).png</file>
+        <file>img/center-alignment.png</file>
+        <file>img/delete (3).png</file>
+        <file>img/exit (2).png</file>
+        <file>img/file.png</file>
+        <file>img/insert.png</file>
+        <file>img/left-alignment.png</file>
+        <file>img/open.png</file>
+        <file>img/right-alignment.png</file>
+        <file>img/save.png</file>
+        <file>img/bold.png</file>
+    </qresource>
+</RCC>
