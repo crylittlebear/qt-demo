@@ -109,7 +109,7 @@ void MainWindow::createItemShow(int rowNo, QString name, QString sex, QDate birt
 void MainWindow::on_btnSetTableHeader_clicked()
 {
     QStringList headerList;
-    headerList << "姓名" << "性别" << "出生日期" << "民族" << "分数" << "是否党员";
+    headerList << "姓名" << "性别" << "出生日期" << "民族" << "是否党员" << "分数";
     ui->tableWidget->setColumnCount(headerList.size());
     for (int i = 0; i < headerList.size(); ++i) {
         QTableWidgetItem* headerItem = new QTableWidgetItem(headerList.at(i));
