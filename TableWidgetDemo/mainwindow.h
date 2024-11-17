@@ -58,6 +58,8 @@ private slots:
 
     void on_spinBoxRow_valueChanged(int arg1);
 
+    void on_tableWidget_cellClicked(int row, int column);
+
 private:
     void createItemShow(int rowNo, QString name, QString sex, QDate birth,
                         QString nation, bool isPm, int score);

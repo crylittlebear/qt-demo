@@ -43,7 +43,7 @@ QPushButton:hover
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <widget class="QWidget" name="mainWidget" native="true">
-      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,3">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,6">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -73,82 +73,10 @@ QPushButton:hover
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout">
-            <item row="3" column="2">
-             <widget class="QPushButton" name="btnAddRow">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>添加行</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="2">
-             <widget class="QPushButton" name="btnSetColWidth">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>自动调节列宽</string>
-              </property>
-             </widget>
-            </item>
             <item row="9" column="0" colspan="2">
              <widget class="QRadioButton" name="radioButtonRowSelect">
               <property name="text">
                <string>行选择</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="3">
-             <widget class="QPushButton" name="btnSetTableHeader">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>设置水平表头</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="0" colspan="3">
-             <widget class="QPushButton" name="btnShowTable">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>读取表格内容到文本</string>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="2">
-             <widget class="QCheckBox" name="checkBoxshowVHeader">
-              <property name="text">
-               <string>显示垂直表头</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="0">
-             <widget class="QPushButton" name="btnSetRowHeight">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>自动调节行高</string>
               </property>
              </widget>
             </item>
@@ -165,33 +93,23 @@ QPushButton:hover
               </property>
              </widget>
             </item>
-            <item row="9" column="2">
-             <widget class="QRadioButton" name="radioButtonBoxSelect">
+            <item row="8" column="0">
+             <widget class="QCheckBox" name="checkBoxShowHHeader">
               <property name="text">
-               <string>单元格选择</string>
+               <string>水平表头</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
-            <item row="2" column="0" colspan="3">
-             <widget class="QPushButton" name="btnSetTableData">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>25</height>
-               </size>
-              </property>
+            <item row="8" column="2">
+             <widget class="QCheckBox" name="checkBoxshowVHeader">
               <property name="text">
-               <string>初始化表格数据</string>
+               <string>垂直表头</string>
               </property>
-             </widget>
-            </item>
-            <item row="1" column="1" colspan="2">
-             <widget class="QSpinBox" name="spinBoxRow">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>25</height>
-               </size>
+              <property name="checked">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
@@ -208,17 +126,88 @@ QPushButton:hover
               </property>
              </widget>
             </item>
-            <item row="8" column="0">
-             <widget class="QCheckBox" name="checkBoxShowHHeader">
+            <item row="5" column="0">
+             <widget class="QPushButton" name="btnSetRowHeight">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
               <property name="text">
-               <string>显示水平表头</string>
+               <string>自适应行高</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QPushButton" name="btnAddRow">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>添加行</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" colspan="3">
+             <widget class="QPushButton" name="btnSetTableHeader">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>设置水平表头</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="2">
+             <widget class="QPushButton" name="btnSetColWidth">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>自适应列宽</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0" colspan="3">
+             <widget class="QPushButton" name="btnShowTable">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>读取表格内容到文本</string>
               </property>
              </widget>
             </item>
             <item row="7" column="0">
              <widget class="QCheckBox" name="checkBoxEditable">
               <property name="text">
-               <string>表格可编辑</string>
+               <string>可编辑</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" colspan="2">
+             <widget class="QSpinBox" name="spinBoxRow">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -238,7 +227,33 @@ QPushButton:hover
             <item row="7" column="2">
              <widget class="QCheckBox" name="checkBoxSpaceRowColor">
               <property name="text">
-               <string>间隔行底色</string>
+               <string>间隔色</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="3">
+             <widget class="QPushButton" name="btnSetTableData">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>初始化表格数据</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="2">
+             <widget class="QRadioButton" name="radioButtonBoxSelect">
+              <property name="text">
+               <string>单元格</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -252,7 +267,39 @@ QPushButton:hover
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <widget class="QTableWidget" name="tableWidget"/>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>列1</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列2</string>
+           </property>
+          </column>
+          <column/>
+          <column/>
+          <item row="0" column="0">
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
          <widget class="QPlainTextEdit" name="plainTextEdit"/>
         </widget>
        </item>

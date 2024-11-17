@@ -25,6 +25,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->addWidget(labelCellType_);
     ui->statusbar->addWidget(labelStudID_);
 
+    // 设置plainText字体及颜色
+    QFont font = ui->plainTextEdit->font();
+    font.setFamily("宋体");
+    font.setPointSize(10);
+    ui->plainTextEdit->setFont(font);
+    ui->plainTextEdit->setStyleSheet("color: red");
+
     // ui->tableWidget->setColumnCount(6);
     // ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
@@ -108,7 +115,8 @@ void MainWindow::on_btnSetTableHeader_clicked()
         QTableWidgetItem* headerItem = new QTableWidgetItem(headerList.at(i));
         QFont font = headerItem->font();
         font.setBold(true);
-        font.setPointSize(11);
+        font.setPointSize(10);
+        font.setFamily("微软雅黑");
         headerItem->setForeground(QBrush(Qt::red));
         headerItem->setFont(font);
         ui->tableWidget->setHorizontalHeaderItem(i, headerItem);
@@ -174,7 +182,29 @@ void MainWindow::on_btnSetColWidth_clicked()
 
 void MainWindow::on_btnShowTable_clicked()
 {
-
+    ui->plainTextEdit->clear();
+    int rowCount = ui->tableWidget->rowCount();
+    int colCount = ui->tableWidget->columnCount();
+    for (int i = 0; i < rowCount; ++i) {
+        QString tempStr;
+        QTableWidgetItem* item = ui->tableWidget->item(i, 0);
+        tempStr +=  ("姓名: " + item->text());
+        item = ui->tableWidget->item(i, 1);
+        tempStr += ("   性别: " + item->text());
+        item = ui->tableWidget->item(i, 2);
+        tempStr += ("   出生日期: " + item->text());
+        item = ui->tableWidget->item(i, 3);
+        tempStr += ("   名族: " + item->text());
+        item = ui->tableWidget->item(i, 4);
+        if (item->checkState() == Qt::Checked) {
+            tempStr += "    党员";
+        } else {
+            tempStr += "    非党员";
+        }
+        item = ui->tableWidget->item(i, 5);
+        tempStr += ("   分数: " + item->text());
+        ui->plainTextEdit->appendPlainText(tempStr);
+    }
 }
 
 
@@ -190,36 +220,70 @@ void MainWindow::on_checkBoxEditable_clicked(bool checked)
 
 void MainWindow::on_checkBoxSpaceRowColor_clicked(bool checked)
 {
+    // 设置间隔行底色
     ui->tableWidget->setAlternatingRowColors(checked);
+    // 设置间隔行底色的颜色
+    ui->tableWidget->setPalette(QPalette(Qt::gray));
 }
 
 
 void MainWindow::on_checkBoxShowHHeader_clicked(bool checked)
 {
-
+    ui->tableWidget->horizontalHeader()->setVisible(checked);
 }
 
 
 void MainWindow::on_checkBoxshowVHeader_clicked(bool checked)
 {
-
+    ui->tableWidget->verticalHeader()->setVisible(checked);
 }
 
 
 void MainWindow::on_radioButtonRowSelect_clicked(bool checked)
 {
-
+    ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 }
 
 
 void MainWindow::on_radioButtonBoxSelect_clicked(bool checked)
 {
-
+    ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);
 }
 
 
 void MainWindow::on_spinBoxRow_valueChanged(int arg1)
 {
 
+}
+
+
+void MainWindow::on_tableWidget_cellClicked(int row, int column)
+{
+    labelIndex_->setText(QString("当前单元格坐标: %1行，%2列").arg(row).arg(column));
+    QString str;
+    switch ((MainWindow::FieldColumn)column) {
+    case MainWindow::ColName:
+        str = "当前单元格类型为: 姓名";
+        break;
+    case MainWindow::ColSex:
+        str = "当前单元格类型为: 性别";
+        break;
+    case MainWindow::ColBirth:
+        str = "当前单元格类型为: 出生日期";
+        break;
+    case MainWindow::ColNation:
+        str = "当前单元格类型为: 民族";
+        break;
+    case MainWindow::ColParty:
+        str = "当前单元格类型为: 是否党员";
+        break;
+    case MainWindow::ColScore:
+        str = "当前单元格类型为: 分数";
+        break;
+    }
+    labelCellType_->setText(str);
+    QTableWidgetItem* item = ui->tableWidget->item(row, 0);
+    uint id = item->data(Qt::UserRole).toInt();
+    labelStudID_->setText(QString("学生ID: %1").arg(id));
 }
 
