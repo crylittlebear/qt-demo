@@ -6,6 +6,9 @@
 #include <QItemSelectionModel>
 #include <QLabel>
 
+#include "customcomboboxdelegate.h"
+#include "customfloatspindelegate.h"
+
 #define FixColClount 6
 
 QT_BEGIN_NAMESPACE
@@ -57,6 +60,9 @@ private:
     QLabel* labelCurFile_;
     QLabel* labelCurPos_;
     QLabel* labelCellText_;
+
+    CustomComboBoxDelegate* comboxDelegate_;
+    CustomFloatSpinDelegate* spinBoxDelegate_;
 
 private:
     Ui::MainWindow *ui;

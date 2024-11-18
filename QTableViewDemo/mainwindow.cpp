@@ -42,6 +42,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->actionInsert->setEnabled(false);
     ui->actionDelete->setEnabled(false);
     ui->actionSave->setEnabled(false);
+
+    // 设置自定义代理
+    spinBoxDelegate_ = new CustomFloatSpinDelegate(this);
+    ui->tableView->setItemDelegateForColumn(1, spinBoxDelegate_);
+    ui->tableView->setItemDelegateForColumn(2, spinBoxDelegate_);
+    ui->tableView->setItemDelegateForColumn(3, spinBoxDelegate_);
+
+    QStringList strList;
+    strList << "优" << "良" << "一般" << "不及格";
+    comboxDelegate_ = new CustomComboBoxDelegate(this);
+    comboxDelegate_->setItems(strList, true);
+    ui->tableView->setItemDelegateForColumn(4, comboxDelegate_);
 }
 
 MainWindow::~MainWindow()
@@ -192,16 +204,16 @@ void MainWindow::on_actionSave_triggered()
         } else {
             str += "0";
         }
-        qDebug() << "str = " << str;
+        // qDebug() << "str = " << str;
         strList << str;
     }
     QString srcPath(__FILE__);
     int pos = srcPath.lastIndexOf("/");
     QString fileDir = srcPath.left(pos);
-    qDebug() << "fileDir: " << fileDir;
+    // qDebug() << "fileDir: " << fileDir;
     QString fileName = QFileDialog::getSaveFileName(this, "保存文件", fileDir, "文本文件(*.txt);;所有文件(*.*)");
     QFile file(fileName);
-    qDebug() << "fileName: " << fileName;
+    // qDebug() << "fileName: " << fileName;
     if (file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Truncate)) {
         QTextStream stream(&file);
         for (int i = 0; i < strList.size(); ++i) {
