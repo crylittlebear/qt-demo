@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/bin.png</file>
+        <file>img/next.png</file>
+        <file>img/play (3).png</file>
+        <file>img/power.png</file>
+        <file>img/pre.png</file>
+        <file>img/stop-button (1).png</file>
+        <file>img/tune.png</file>
+        <file>img/zoom.png</file>
+        <file>img/file.png</file>
+        <file>img/minus.png</file>
+        <file>img/cycle.png</file>
+        <file>img/volume.png</file>
+        <file>img/pause-button.png</file>
+        <file>img/next (1).png</file>
+        <file>img/pause (1).png</file>
+        <file>img/play (1).png</file>
+        <file>img/previous.png</file>
+        <file>img/stop.png</file>
+        <file>img/file (1).png</file>
+        <file>img/minus (1).png</file>
+        <file>img/music (1).png</file>
+        <file>img/picture.png</file>
+        <file>img/power (1).png</file>
+        <file>img/trash (1).png</file>
+        <file>img/video.png</file>
+        <file>img/website.png</file>
+        <file>img/close.png</file>
+        <file>img/fullscreen.png</file>
+        <file>img/minus (2).png</file>
+        <file>img/cyclePlay.png</file>
+        <file>img/repeat.png</file>
+        <file>img/seqPlay.png</file>
+    </qresource>
+</RCC>
