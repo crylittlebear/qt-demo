@@ -27,26 +27,26 @@ void Widget::dragEnterEvent(QDragEnterEvent *event)
     qDebug() << "in drag enter event process";
     // ui->plainTextEdit->clear();
     // ui->plainTextEdit->appendPlainText("dragEnterEvent事件 mimeData()->formats()");
-    for (int i = 0; i < event->mimeData()->formats().size(); ++i) {
-        // ui->plainTextEdit->appendPlainText(event->mimeData()->formats().at(i));
-    }
-    // ui->plainTextEdit->appendPlainText("\n dragEnter event事件 mimeData()->urls()");
-    for (int i = 0; i < event->mimeData()->urls().size(); ++i) {
-        QUrl url = event->mimeData()->urls().at(i);
-        // ui->plainTextEdit->appendPlainText(url.path());
-    }
-    if (event->mimeData()->hasUrls()) {
-        QString fileName = event->mimeData()->urls().at(0).fileName();
-        QFileInfo fileInfo(fileName);
-        QString ext = fileInfo.suffix().toUpper();
-        if (ext == "JPG") {
-            event->acceptProposedAction();
-        } else {
-            event->ignore();
-        }
-    } else {
-        event->ignore();
-    }
+    // for (int i = 0; i < event->mimeData()->formats().size(); ++i) {
+    //     // ui->plainTextEdit->appendPlainText(event->mimeData()->formats().at(i));
+    // }
+    // // ui->plainTextEdit->appendPlainText("\n dragEnter event事件 mimeData()->urls()");
+    // for (int i = 0; i < event->mimeData()->urls().size(); ++i) {
+    //     QUrl url = event->mimeData()->urls().at(i);
+    //     // ui->plainTextEdit->appendPlainText(url.path());
+    // }
+    // if (event->mimeData()->hasUrls()) {
+    //     QString fileName = event->mimeData()->urls().at(0).fileName();
+    //     QFileInfo fileInfo(fileName);
+    //     QString ext = fileInfo.suffix().toUpper();
+    //     if (ext == "JPG") {
+    //         event->acceptProposedAction();
+    //     } else {
+    //         event->ignore();
+    //     }
+    // } else {
+    //     event->ignore();
+    // }
 }
 
 void Widget::resizeEvent(QResizeEvent *event)

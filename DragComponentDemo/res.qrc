@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/add (1).png</file>
+        <file>img/delete (3).png</file>
+        <file>img/diskette.png</file>
+        <file>img/female-student.png</file>
+        <file>img/floating-island.png</file>
+        <file>img/folder (5).png</file>
+        <file>img/gallery.png</file>
+        <file>img/height.png</file>
+        <file>img/icon.png</file>
+        <file>img/idea.png</file>
+        <file>img/image (5).png</file>
+        <file>img/male-student.png</file>
+        <file>img/picture (1).png</file>
+        <file>img/scanner.png</file>
+        <file>img/smart-tv.png</file>
+        <file>img/switch (2).png</file>
+        <file>img/width.png</file>
+    </qresource>
+</RCC>
