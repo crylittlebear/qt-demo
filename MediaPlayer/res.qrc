@@ -32,5 +32,11 @@
         <file>img/cyclePlay.png</file>
         <file>img/repeat.png</file>
         <file>img/seqPlay.png</file>
+        <file>img/live.png</file>
+        <file>img/silent.png</file>
+        <file>img/sound.png</file>
+        <file>img/mute1.png</file>
+        <file>img/sound1.png</file>
+        <file>img/person.png</file>
     </qresource>
 </RCC>

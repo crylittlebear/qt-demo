@@ -12,6 +12,7 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
 
     setWindowFlags(Qt::FramelessWindowHint);
+    setWindowIcon(QIcon("://img/live.png"));
     setAttribute(Qt::WA_TranslucentBackground);
 
     ui->listWidget->installEventFilter(this);
@@ -23,6 +24,7 @@ Widget::Widget(QWidget *parent)
     player_ = new QMediaPlayer(this);
     QAudioOutput* audioOutput = new QAudioOutput(this);
     player_->setAudioOutput(audioOutput);
+    player_->setVideoOutput(ui->videoWidget);
 
     initConnections();
 
@@ -80,8 +82,6 @@ void Widget::changeBackground()
 void Widget::setBtnControlDisable()
 {
     ui->tBtnPlay->setEnabled(false);
-    ui->tBtnPause->setEnabled(false);
-    ui->tBtnStop->setEnabled(false);
     ui->tBtnPre->setEnabled(false);
     ui->tBtnNext->setEnabled(false);
 }
@@ -89,8 +89,6 @@ void Widget::setBtnControlDisable()
 void Widget::setBtnControlEnable()
 {
     ui->tBtnPlay->setEnabled(true);
-    ui->tBtnPause->setEnabled(true);
-    ui->tBtnStop->setEnabled(true);
     ui->tBtnPre->setEnabled(true);
     ui->tBtnNext->setEnabled(true);
 }
@@ -286,15 +284,6 @@ void Widget::on_tBtnPlay_clicked()
     player_->play();
 }
 
-
-void Widget::on_tBtnPause_clicked()
-{
-    if (player_->playbackState() == QMediaPlayer::PlayingState) {
-        player_->pause();
-    }
-}
-
-
 void Widget::on_tBtnStop_clicked()
 {
     player_->stop();
@@ -325,5 +314,29 @@ void Widget::on_tBtnNext_clicked()
     player_->setSource(getUrlFromItem(ui->listWidget->currentItem()));
     player_->play();
     loopPlay_ = (ui->tBtnPalyMode->text() == "循环播放");
+}
+
+
+void Widget::on_tBtnVolumn_clicked()
+{
+    bool mute = player_->audioOutput()->isMuted();
+    player_->audioOutput()->setMuted(!mute);
+    if (mute) {
+        ui->tBtnVolumn->setIcon(QIcon("://img/sound1.png"));
+    } else {
+        ui->tBtnVolumn->setIcon(QIcon("://img/mute1.png"));
+    }
+}
+
+
+void Widget::on_tBtnMusic_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->pageMusic);
+}
+
+
+void Widget::on_tBtnVideo_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->pageVideo);
 }
 

@@ -54,7 +54,7 @@ bool CustomSlider::isInDragingArea(QPoint pos)
 void CustomSlider::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    painter.setBrush(QColor(39, 105, 188));
+    painter.setBrush(QColor(0, 0, 255));
     painter.setPen(Qt::NoPen);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.drawRoundedRect(QRectF(sliderHeight_ + 2, this->height() * 2 / 5.0,

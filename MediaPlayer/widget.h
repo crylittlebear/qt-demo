@@ -68,13 +68,17 @@ private slots:
 
     void on_tBtnPlay_clicked();
 
-    void on_tBtnPause_clicked();
-
     void on_tBtnStop_clicked();
 
     void on_tBtnPre_clicked();
 
     void on_tBtnNext_clicked();
+
+    void on_tBtnVolumn_clicked();
+
+    void on_tBtnMusic_clicked();
+
+    void on_tBtnVideo_clicked();
 
 private:
     Ui::Widget *ui;
