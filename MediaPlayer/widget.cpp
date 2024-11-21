@@ -1,7 +1,7 @@
 #include "widget.h"
 #include "./ui_widget.h"
 
-#include <QDIr>
+#include <QDir>
 #include <QFileDialog>
 #include <QMenu>
 
@@ -73,9 +73,8 @@ void Widget::changeBackground()
     QRandomGenerator generator;
     // 随机挑选一张背景图片
     QString backgroundPath = backgroundDir_ + backgroundList_.at(generator.global()->bounded(0, backgroundList_.size()));
-    QPixmap pixmap(backgroundPath);
-    QPixmap pix = pixmap.scaled(ui->label->width(), ui->label->height());
-    ui->label->setPixmap(pix);
+    ui->label->setImage(backgroundPath);
+    update();
 }
 
 void Widget::setBtnControlDisable()
